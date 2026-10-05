@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find My Skills | Fresh Start Job Readiness Course</title>
+<meta name="description" content="Turn your work, volunteer, caregiving, school, or community experience into skills you can put on a resume and talk about in an interview. Nothing you type is saved or sent anywhere.">
+<style>
+:root{
+  --forest:#013220; --gold:#C6A15B; --gray:#7B7B7B; --ivory:#F8F5E9; --charcoal:#333333;
+  --sage:#A3B18A; --coral:#D97A6A; --sky:#89B6A5;
+  --sage-tint:#E4EADA; --coral-tint:#F7E0DB; --sky-tint:#DCEBE5;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ivory);color:var(--charcoal);font-family:Verdana,"DejaVu Sans",sans-serif;font-size:1.125rem;line-height:1.6;overflow-wrap:anywhere}
+.skip{position:absolute;left:0.5rem;top:-4rem;background:var(--ivory);color:var(--forest);border:3px solid var(--forest);padding:0.5rem 1rem;z-index:10;font-weight:bold}
+.skip:focus{top:0.5rem}
+.band{background:var(--forest);color:var(--ivory);padding:1.25rem 1rem;border-bottom:6px solid var(--gold)}
+.band-inner,.wrap{max-width:46rem;margin:0 auto}
+.kicker{margin:0;color:var(--gold);font-size:1rem;font-weight:bold;letter-spacing:0.04em;text-transform:uppercase}
+.band h1{margin:0.25rem 0;font-size:1.75rem;line-height:1.25;color:var(--ivory)}
+.tagline{margin:0;font-size:1.125rem}
+main{display:block;padding:1.25rem 1rem 2rem;max-width:46rem;margin:0 auto}
+main:focus{outline:none}
+h2{color:var(--forest);font-size:1.5rem;line-height:1.3;margin:0.5rem 0 0.75rem}
+h3{color:var(--forest);font-size:1.25rem;line-height:1.3;margin:0 0 0.5rem}
+h4{color:var(--forest);font-size:1.125rem;margin:1rem 0 0.25rem}
+h2:focus,h3:focus{outline:3px solid var(--forest);outline-offset:4px}
+p{margin:0 0 0.9rem}
+.stepinfo{font-size:1rem;font-weight:bold;color:var(--forest);margin:0 0 0.25rem}
+.bar{height:0.6rem;background:var(--sky-tint);border:1px solid var(--forest);border-radius:0.4rem;margin:0 0 1rem;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--sage)}
+.hint{font-size:1rem;margin:0.15rem 0 0.5rem}
+.notice{background:var(--sky-tint);border-left:6px solid var(--forest);padding:0.75rem 1rem;margin:0 0 1.1rem}
+.notice strong{color:var(--forest)}
+.truth{background:var(--sage-tint);border:2px solid var(--forest);padding:0.75rem 1rem;margin:0 0 1.1rem}
+#errbox:empty{display:none}
+#errbox{background:var(--coral-tint);border:3px solid var(--coral);border-left-width:10px;color:var(--charcoal);padding:0.75rem 1rem;margin:0 0 1rem;font-weight:bold}
+fieldset{border:2px solid var(--gray);background:#fff;margin:0 0 1.1rem;padding:0.75rem 1rem 0.5rem;min-width:0}
+legend{font-weight:bold;color:var(--forest);padding:0 0.4rem}
+.opt{display:flex;gap:0.75rem;align-items:flex-start;padding:0.5rem 0.4rem;margin:0 0 0.35rem;border:2px solid transparent;border-radius:0.3rem}
+.opt input{flex:none;width:1.5rem;height:1.5rem;margin:0.2rem 0 0;accent-color:var(--forest)}
+.opt label{flex:1;cursor:pointer}
+.opt .hint{display:block;margin:0}
+.opt:has(input:checked){background:var(--sage-tint);border-color:var(--forest)}
+label.field{display:block;font-weight:bold;color:var(--forest);margin:0 0 0.2rem}
+input[type=text],textarea{display:block;width:100%;font:inherit;font-size:1.125rem;color:var(--charcoal);background:#fff;border:2px solid var(--gray);border-radius:0.3rem;padding:0.6rem 0.7rem;margin:0 0 1.1rem}
+textarea{line-height:1.5;resize:vertical;min-height:4.5rem}
+.btns{display:flex;flex-wrap:wrap;gap:0.75rem;margin:1.25rem 0 0.5rem}
+button{font:inherit;font-size:1.125rem;font-weight:bold;min-height:2.9rem;padding:0.55rem 1.2rem;border-radius:0.4rem;border:3px solid var(--forest);cursor:pointer}
+button.primary{background:var(--forest);color:var(--ivory)}
+button.secondary{background:#fff;color:var(--forest)}
+button:hover{outline:2px solid var(--gold);outline-offset:1px}
+:focus-visible{outline:3px solid var(--forest);outline-offset:3px}
+button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--forest);outline-offset:3px;box-shadow:0 0 0 6px var(--ivory)}
+input[type=text]:focus-visible,textarea:focus-visible{box-shadow:none}
+.card{background:#fff;border:2px solid var(--forest);border-top:8px solid var(--gold);border-radius:0.3rem;padding:1rem;margin:0 0 1.25rem}
+.badge{display:inline-block;font-size:1rem;font-weight:bold;background:var(--sage-tint);color:var(--forest);border:2px solid var(--forest);border-radius:1rem;padding:0 0.6rem;margin-left:0.4rem;vertical-align:middle}
+.verbs{font-size:1rem}
+.label{font-weight:bold;color:var(--forest);margin:0.5rem 0 0.2rem}
+.note{white-space:pre-wrap;margin:0 0 0.9rem}
+.sumexp{border-top:4px solid var(--forest);padding-top:0.75rem;margin-top:1.5rem}
+.sumskill{margin:0 0 1.25rem}
+ul.plain{margin:0 0 0.9rem;padding-left:1.4rem}
+ul.plain li{margin:0 0 0.35rem}
+.confirm{background:var(--coral-tint);border:2px solid var(--coral);padding:0.75rem 1rem;margin:0.75rem 0}
+.footer{max-width:46rem;margin:0 auto;padding:1rem;font-size:1rem;border-top:2px solid var(--sage)}
+.printhead{display:none}
+@media (max-width:30rem){
+  .band h1{font-size:1.5rem}
+  button{width:100%}
+  fieldset{padding:0.6rem 0.6rem 0.4rem}
+  .opt{padding:0.4rem 0.2rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media (forced-colors:active){
+  :focus-visible{outline:3px solid Highlight}
+  .opt:has(input:checked){border-color:Highlight}
+  .bar span{background:Highlight}
+}
+@media print{
+  @page{margin:0.75in}
+  html,body{background:#fff!important;color:#000!important}
+  body{font-size:12pt;line-height:1.45}
+  .band,.footer,.skip,.noprint,#errbox,noscript{display:none!important}
+  main{padding:0;max-width:none}
+  .printhead{display:block;font-size:12pt;margin:0 0 0.5rem}
+  h2,h3,h4{color:#000!important}
+  h2{font-size:18pt}h3{font-size:14pt}h4{font-size:12pt}
+  h3,h4{break-after:avoid}
+  .sumskill{break-inside:avoid;border:1px solid #000;padding:0.5rem 0.75rem}
+  .sumexp{border-top:2px solid #000}
+  .truth,.notice{background:#fff!important;border:1px solid #000!important}
+  .label{color:#000}
+  a{color:#000}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="band">
+  <div class="band-inner">
+    <p class="kicker">Fresh Start Job Readiness Course</p>
+    <h1>Find My Skills</h1>
+    <p class="tagline">Turn what you have done into words for your resume and your interviews.</p>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+  <noscript><p class="notice">This tool needs JavaScript to run. Ask your instructor for the text-only Word version of this activity.</p></noscript>
+  <div id="errbox" role="alert"></div>
+  <div id="app"></div>
+</main>
+<footer class="footer">
+  <p>Nothing you type in this tool is saved or sent anywhere. When you close or refresh this page, your answers are gone.</p>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Content ---------- */
+  var TYPES = [
+    { id: 'job', label: 'Paid job', hint: 'Part-time, full-time, seasonal, or gig work', example: 'Cashier at a grocery store', intro: 'Every job builds skills, even short ones.' },
+    { id: 'volunteer', label: 'Volunteer work', hint: 'Unpaid work for a group, a cause, or people who need help', example: 'Food bank volunteer', intro: 'Unpaid work is real work. Employers count it.' },
+    { id: 'caregiving', label: 'Caregiving', hint: 'Taking care of children, parents, other family, or friends', example: 'Caring for my grandmother', intro: 'Caring for family is real work, and it builds real skills.' },
+    { id: 'school', label: 'School', hint: 'Classes, group projects, clubs, or training programs', example: 'Group project in my science class', intro: 'School counts, especially group work, deadlines, and presentations.' },
+    { id: 'community', label: 'Community or faith group', hint: 'Neighborhood, church, mosque, temple, sports, or cultural groups', example: 'Helped plan our neighborhood cleanup', intro: 'Helping in your community shows initiative and teamwork.' },
+    { id: 'other', label: 'Something else', hint: 'Running a household, a side business, helping neighbors, and more', example: 'Helping run my family’s business', intro: 'If you did it, it can count. We will help you find the words.' }
+  ];
+
+  var SKILLS = [
+    { id: 'comm', name: 'Communication', why: 'Many jobs need people who can explain things clearly and listen well.', verbs: ['Explained', 'Communicated', 'Presented', 'Wrote'] },
+    { id: 'team', name: 'Teamwork', why: 'Many jobs need people who can work well with others to get things done.', verbs: ['Collaborated', 'Coordinated', 'Supported', 'Contributed'] },
+    { id: 'customer', name: 'Customer service', why: 'Many jobs need people who treat customers and clients with care and respect.', verbs: ['Assisted', 'Served', 'Greeted', 'Resolved'] },
+    { id: 'money', name: 'Handling money', why: 'Many employers need people they can trust with cash, cards, and numbers.', verbs: ['Processed', 'Counted', 'Tracked', 'Balanced'] },
+    { id: 'teach', name: 'Teaching and training others', why: 'Many jobs need people who can show others how to do something.', verbs: ['Taught', 'Trained', 'Coached', 'Guided'] },
+    { id: 'problem', name: 'Problem solving', why: 'Many jobs need people who can figure out what is wrong and find a fix.', verbs: ['Solved', 'Fixed', 'Resolved', 'Improved'] },
+    { id: 'org', name: 'Organization and time management', why: 'Many jobs need people who can plan, set priorities, and meet deadlines.', verbs: ['Organized', 'Scheduled', 'Planned', 'Prioritized'] },
+    { id: 'reliable', name: 'Reliability and responsibility', why: 'Many employers need people who show up and follow through.', verbs: ['Completed', 'Followed through on', 'Maintained', 'Delivered'] },
+    { id: 'care', name: 'Caring for others', why: 'Many jobs need people who notice what others need and help.', verbs: ['Supported', 'Cared for', 'Assisted', 'Comforted'] },
+    { id: 'lead', name: 'Leadership', why: 'Many jobs need people who can guide others toward a goal.', verbs: ['Led', 'Directed', 'Guided', 'Organized'] },
+    { id: 'tech', name: 'Using technology', why: 'Many jobs use computers, phones, and apps every day.', verbs: ['Operated', 'Entered', 'Used', 'Tracked'] },
+    { id: 'safety', name: 'Safety and following procedures', why: 'Many jobs need people who follow steps and rules carefully.', verbs: ['Followed', 'Maintained', 'Completed', 'Checked'] },
+    { id: 'learn', name: 'Learning quickly', why: 'Many employers need people who pick up new tasks and adapt.', verbs: ['Learned', 'Adapted to', 'Mastered', 'Picked up'] },
+    { id: 'detail', name: 'Attention to detail', why: 'Many jobs need people who catch small mistakes before they become big ones.', verbs: ['Checked', 'Verified', 'Recorded', 'Reviewed'] },
+    { id: 'pressure', name: 'Staying calm under pressure', why: 'Many jobs get busy. Employers value people who stay steady.', verbs: ['Managed', 'Handled', 'Balanced', 'Prioritized'] },
+    { id: 'diverse', name: 'Working with all kinds of people', why: 'Many workplaces include people from many backgrounds and languages.', verbs: ['Welcomed', 'Communicated with', 'Collaborated with', 'Respected'] },
+    { id: 'physical', name: 'Hands-on and physical work', why: 'Many jobs need people who can use tools and do active work safely.', verbs: ['Lifted', 'Operated', 'Stocked', 'Assembled'] }
+  ];
+
+  var GROUPS = [
+    { name: 'Working with people', tasks: [
+      { id: 't1', text: 'I helped customers or clients find what they needed', act: 'Helped customers find what they needed', skills: ['customer', 'comm'] },
+      { id: 't2', text: 'I answered questions or fixed a complaint', act: 'Answered questions and resolved concerns', skills: ['customer', 'problem'] },
+      { id: 't3', text: 'I worked with a team to get something done', act: 'Worked with teammates to finish shared tasks', skills: ['team'] },
+      { id: 't4', text: 'I helped someone learn something', act: 'Taught others how to do a task', skills: ['teach', 'comm'] },
+      { id: 't5', text: 'I showed new people how things are done', act: 'Trained new people on how things are done', skills: ['teach', 'lead'] },
+      { id: 't6', text: 'I led a group or told others what to do', act: 'Led a group to reach a goal', skills: ['lead', 'team'] },
+      { id: 't7', text: 'I worked with people from different backgrounds or who speak other languages', act: 'Communicated with people from many backgrounds', skills: ['diverse', 'comm'] },
+      { id: 't8', text: 'I listened to people and helped them feel heard', act: 'Listened carefully and supported people in need', skills: ['care', 'comm'] },
+      { id: 't9', text: 'I spoke in front of a group', act: 'Spoke in front of groups', skills: ['comm', 'lead'] }
+    ]},
+    { name: 'Money and numbers', tasks: [
+      { id: 't10', text: 'I handled money (cash, cards, or payments)', act: 'Handled cash and card payments', skills: ['money', 'detail', 'reliable'] },
+      { id: 't11', text: 'I kept track of money, a budget, or supplies', act: 'Tracked money, budgets, or supplies', skills: ['money', 'org', 'detail'] },
+      { id: 't12', text: 'I counted, measured, or checked stock', act: 'Counted and checked stock', skills: ['detail', 'org'] }
+    ]},
+    { name: 'Organizing and planning', tasks: [
+      { id: 't13', text: 'I kept a schedule or managed my time', act: 'Managed my time to meet deadlines', skills: ['org', 'reliable'] },
+      { id: 't14', text: 'I planned an event, trip, meal, or activity', act: 'Planned and organized activities or events', skills: ['org', 'lead'] },
+      { id: 't15', text: 'I did many tasks at the same time', act: 'Balanced several tasks at the same time', skills: ['pressure', 'org'] },
+      { id: 't16', text: 'I kept records or filled out forms and paperwork', act: 'Kept accurate records and paperwork', skills: ['detail', 'org'] },
+      { id: 't17', text: 'I raised money or signed people up for a cause', act: 'Raised funds and signed people up for a cause', skills: ['comm', 'team'] }
+    ]},
+    { name: 'Solving problems and learning', tasks: [
+      { id: 't18', text: 'I fixed something or figured out a problem', act: 'Found solutions to problems', skills: ['problem'] },
+      { id: 't19', text: 'I learned a new task or system quickly', act: 'Learned new tasks and systems quickly', skills: ['learn'] },
+      { id: 't20', text: 'I came up with a better way to do something', act: 'Suggested and tried better ways to do tasks', skills: ['problem', 'learn'] },
+      { id: 't21', text: 'I stayed calm when things got busy or stressful', act: 'Stayed calm and focused during busy times', skills: ['pressure'] }
+    ]},
+    { name: 'Caring and responsibility', tasks: [
+      { id: 't22', text: 'I took care of children, older adults, or family members', act: 'Cared for children, older adults, or family members', skills: ['care', 'reliable', 'org'] },
+      { id: 't23', text: 'I helped someone with daily needs like meals, rides, or getting around', act: 'Helped people with daily needs such as meals and getting around', skills: ['care', 'reliable'] },
+      { id: 't24', text: 'I showed up on time and did what I said I would do', act: 'Showed up on time and followed through on commitments', skills: ['reliable'] },
+      { id: 't25', text: 'I was trusted with keys, money, or private information', act: 'Was trusted with keys, money, or private information', skills: ['reliable', 'detail'] }
+    ]},
+    { name: 'Tools, safety, and hands-on work', tasks: [
+      { id: 't26', text: 'I used a computer, a phone app, or other technology', act: 'Used computers and apps to get work done', skills: ['tech'] },
+      { id: 't27', text: 'I wrote or typed things like emails, flyers, or reports', act: 'Wrote clear messages and materials', skills: ['comm', 'tech'] },
+      { id: 't28', text: 'I used tools or equipment', act: 'Used tools and equipment safely', skills: ['physical', 'safety'] },
+      { id: 't29', text: 'I followed safety rules or cleaning steps', act: 'Followed safety rules and procedures', skills: ['safety', 'detail'] },
+      { id: 't30', text: 'I followed written or spoken directions step by step', act: 'Followed directions step by step', skills: ['safety', 'learn'] },
+      { id: 't31', text: 'I worked on my feet, lifted things, or did physical work', act: 'Did physical work for long periods', skills: ['physical', 'pressure'] }
+    ]}
+  ];
+
+  var MAX_SHOWN = 6, MAX_EXPS = 5;
+  var BLANK_NUM = '[add a number: how many, how often, or how long]';
+
+  var skillById = {}, taskById = {}, taskOrder = [];
+  SKILLS.forEach(function (s, i) { s.order = i; skillById[s.id] = s; });
+  GROUPS.forEach(function (g) { g.tasks.forEach(function (t) { taskById[t.id] = t; taskOrder.push(t.id); }); });
+
+  /* ---------- State (memory only; never stored or sent) ---------- */
+  var state;
+  function newExp() { return { type: '', name: '', time: '', tasks: {}, number: '', proud: '', sk: {} }; }
+  function resetState() { state = { screen: 'type', cur: newExp(), exps: [], style: 'STAR' }; }
+  resetState();
+
+  /* ---------- DOM helpers ---------- */
+  var app = document.getElementById('app');
+  var errbox = document.getElementById('errbox');
+  var uid = 0;
+  function nid(p) { uid += 1; return p + '-' + uid; }
+
+  function add(el, c) {
+    if (c === null || c === undefined || c === false) return;
+    if (Array.isArray(c)) { c.forEach(function (x) { add(el, x); }); return; }
+    if (typeof c === 'object') { el.appendChild(c); return; }
+    el.appendChild(document.createTextNode(String(c)));
+  }
+  function h(tag, attrs) {
+    var el = document.createElement(tag);
+    if (attrs) {
+      Object.keys(attrs).forEach(function (k) {
+        var v = attrs[k];
+        if (v === null || v === undefined || v === false) return;
+        if (k === 'class') el.className = v;
+        else if (k.slice(0, 2) === 'on') el.addEventListener(k.slice(2), v);
+        else if (k === 'value' || k === 'checked') el[k] = v;
+        else if (v === true) el.setAttribute(k, '');
+        else el.setAttribute(k, v);
+      });
+    }
+    for (var i = 2; i < arguments.length; i++) add(el, arguments[i]);
+    return el;
+  }
+  function lc(s) { return s.charAt(0).toLowerCase() + s.slice(1); }
+  function typeById(id) { return TYPES.filter(function (t) { return t.id === id; })[0]; }
+  function showError(msg, focusEl) {
+    errbox.textContent = '';
+    if (msg) errbox.textContent = 'Problem: ' + msg;
+    if (focusEl) focusEl.focus();
+  }
+  function clearError() { errbox.textContent = ''; }
+
+  function go(screen, focusSel) {
+    state.screen = screen;
+    clearError();
+    render();
+    var target = app.querySelector(focusSel || '[data-focus]');
+    if (target) target.focus();
+    window.scrollTo(0, 0);
+  }
+
+  function stepHead(num, title) {
+    return [
+      h('p', { class: 'stepinfo' }, 'Experience ' + (state.exps.indexOf(state.cur) >= 0 ? state.exps.indexOf(state.cur) + 1 : state.exps.length + 1) + ' • Step ' + num + ' of 4'),
+      h('div', { class: 'bar', 'aria-hidden': 'true' }, h('span', { style: 'width:' + (num * 25) + '%' })),
+      h('h2', { tabindex: '-1', 'data-focus': '' }, title)
+    ];
+  }
+
+  /* ---------- Matching and wording ---------- */
+  function checkedTasks(exp) { return taskOrder.filter(function (id) { return exp.tasks[id]; }); }
+
+  function matchSkills(exp) {
+    var map = {};
+    checkedTasks(exp).forEach(function (tid) {
+      taskById[tid].skills.forEach(function (sid) {
+        if (!map[sid]) map[sid] = [];
+        map[sid].push(tid);
+      });
+    });
+    return Object.keys(map).map(function (sid) { return { id: sid, tasks: map[sid] }; })
+      .sort(function (a, b) { return b.tasks.length - a.tasks.length || skillById[a.id].order - skillById[b.id].order; });
+  }
+
+  function bulletsFor(exp, m) {
+    return m.tasks.slice(0, 2).map(function (tid, i) {
+      var num = (i === 0 && exp.number.trim()) ? '(' + exp.number.trim() + ')' : BLANK_NUM;
+      return taskById[tid].act + ' ' + num + '.';
+    });
+  }
+  function starFor(exp, m) {
+    var act = lc(taskById[m.tasks[0]].act);
+    var result = exp.proud.trim()
+      ? 'Result: ' + exp.proud.trim() + ' [Add a number or what changed.]'
+      : 'Result: [Say what changed or what you learned. Use a number if you can.]';
+    return 'Situation: This was during “' + exp.name + '”. [Describe what was going on in one sentence.]\n' +
+      'Task: I needed to [say what you had to get done].\n' +
+      'Action: I ' + act + '. [Add one or two details about how you did it.]\n' + result;
+  }
+  function ppfFor(exp, m) {
+    var act = lc(taskById[m.tasks[0]].act);
+    return 'Past: In “' + exp.name + '”, I ' + act + '. [Add one detail.]\n' +
+      'Present: Today I keep building this skill (' + skillById[m.id].name + ') when I [say where you use it now, such as at school, at home, or in your community].\n' +
+      'Future: In the job I want, I will use this skill to [say how it will help your employer].';
+  }
+  function sig(exp, m) {
+    return [exp.name, exp.number, exp.proud, m.tasks.join(',')].join('|');
+  }
+  function buildSkills(exp) {
+    var old = exp.sk, fresh = {}, order = [];
+    matchSkills(exp).forEach(function (m, i) {
+      var s = sig(exp, m);
+      if (old[m.id] && old[m.id].sig === s) { fresh[m.id] = old[m.id]; fresh[m.id].rank = i; fresh[m.id].count = m.tasks.length; }
+      else fresh[m.id] = { sig: s, rank: i, count: m.tasks.length, include: i < MAX_SHOWN, bullets: bulletsFor(exp, m), tp: { STAR: starFor(exp, m), PPF: ppfFor(exp, m) } };
+    });
+    exp.sk = fresh;
+  }
+  function rankedSkillIds(exp) {
+    return Object.keys(exp.sk).sort(function (a, b) { return exp.sk[a].rank - exp.sk[b].rank; });
+  }
+  function styleName(s) { return s === 'STAR' ? 'STAR (Situation, Task, Action, Result)' : 'Past, Present, Future'; }
+
+  /* ---------- Screens ---------- */
+  function renderType() {
+    var exp = state.cur;
+    var radios = TYPES.map(function (t) {
+      var id = 'type-' + t.id;
+      return h('div', { class: 'opt' },
+        h('input', { type: 'radio', name: 'etype', id: id, value: t.id, checked: exp.type === t.id, 'aria-describedby': id + '-h' }),
+        h('label', { for: id }, t.label, h('span', { class: 'hint', id: id + '-h' }, t.hint)));
+    });
+    var fs = h('fieldset', null, h('legend', null, 'Choose one type of experience'), radios);
+    return [
+      stepHead(1, 'What experience do you want to start with?'),
+      h('p', null, 'Unpaid work counts. Volunteering, caring for family, school projects, and helping in your community all build skills that employers want.'),
+      h('p', { class: 'notice' }, h('strong', null, 'Your privacy: '), 'Nothing you type here is saved or sent anywhere. If you close or refresh this page, your answers are gone. At the end, use the Print or Copy button to keep your results.'),
+      h('p', { class: 'hint' }, 'You can add more experiences later. Start with one.'),
+      fs,
+      h('div', { class: 'btns' }, h('button', { type: 'button', class: 'primary', onclick: function () {
+        var sel = app.querySelector('input[name=etype]:checked');
+        if (!sel) { showError('Please choose one type of experience.', app.querySelector('input[name=etype]')); return; }
+        if (exp.type !== sel.value) { exp.type = sel.value; }
+        go('details');
+      } }, 'Next'))
+    ];
+  }
+
+  function renderDetails() {
+    var exp = state.cur, t = typeById(exp.type);
+    var nameIn = h('input', { type: 'text', id: 'f-name', value: exp.name, autocomplete: 'off', 'aria-describedby': 'f-name-h', 'aria-required': 'true' });
+    var timeIn = h('input', { type: 'text', id: 'f-time', value: exp.time, autocomplete: 'off', 'aria-describedby': 'f-time-h' });
+    return [
+      stepHead(2, 'Tell us a little about it'),
+      h('p', null, t.intro),
+      h('label', { class: 'field', for: 'f-name' }, 'What would you call this experience? (required)'),
+      h('p', { class: 'hint', id: 'f-name-h' }, 'Use a short title. Example: ' + t.example),
+      nameIn,
+      h('label', { class: 'field', for: 'f-time' }, 'About how long did you do it? (optional)'),
+      h('p', { class: 'hint', id: 'f-time-h' }, 'Example: 2 years, one summer, or a few months'),
+      timeIn,
+      h('div', { class: 'btns' },
+        h('button', { type: 'button', class: 'secondary', onclick: function () { exp.name = nameIn.value; exp.time = timeIn.value; go('type'); } }, 'Back'),
+        h('button', { type: 'button', class: 'primary', onclick: function () {
+          exp.name = nameIn.value.trim(); exp.time = timeIn.value.trim();
+          if (!exp.name) { showError('Please give this experience a short name.', nameIn); return; }
+          go('tasks');
+        } }, 'Next'))
+    ];
+  }
+
+  function renderTasks() {
+    var exp = state.cur;
+    var groups = GROUPS.map(function (g, gi) {
+      return h('fieldset', null, h('legend', null, g.name),
+        g.tasks.map(function (t) {
+          var id = 'task-' + t.id;
+          return h('div', { class: 'opt' },
+            h('input', { type: 'checkbox', id: id, value: t.id, checked: !!exp.tasks[t.id] }),
+            h('label', { for: id }, t.text));
+        }));
+    });
+    var numIn = h('input', { type: 'text', id: 'f-num', value: exp.number, autocomplete: 'off', 'aria-describedby': 'f-num-h' });
+    var proudIn = h('textarea', { id: 'f-proud', rows: '3', 'aria-describedby': 'f-proud-h' });
+    proudIn.value = exp.proud;
+    function save() {
+      app.querySelectorAll('input[type=checkbox]').forEach(function (c) { if (c.checked) exp.tasks[c.value] = true; else delete exp.tasks[c.value]; });
+      exp.number = numIn.value; exp.proud = proudIn.value;
+    }
+    return [
+      stepHead(3, 'What did you do?'),
+      h('p', null, 'Check everything that sounds like you. Small things count. Do not worry if it feels ordinary: employers want ordinary skills done well.'),
+      h('p', { class: 'truth' }, h('strong', null, 'Only check what is true. '), 'A resume and an interview should only include things you really did.'),
+      groups,
+      h('h3', null, 'Optional details'),
+      h('p', { class: 'hint' }, 'These help us write better starters for you. You can skip them.'),
+      h('label', { class: 'field', for: 'f-num' }, 'A number you can mention (optional)'),
+      h('p', { class: 'hint', id: 'f-num-h' }, 'A short phrase. Example: about 40 customers a day, or 3 younger cousins, or every weekend for a year'),
+      numIn,
+      h('label', { class: 'field', for: 'f-proud' }, 'Something you are proud of from this experience (optional)'),
+      h('p', { class: 'hint', id: 'f-proud-h' }, 'One or two sentences. This can become the ending of your interview story.'),
+      proudIn,
+      h('div', { class: 'btns' },
+        h('button', { type: 'button', class: 'secondary', onclick: function () { save(); go('details'); } }, 'Back'),
+        h('button', { type: 'button', class: 'primary', onclick: function () {
+          save();
+          if (!checkedTasks(exp).length) { showError('Please check at least one thing you did.', app.querySelector('input[type=checkbox]')); return; }
+          buildSkills(exp);
+          if (state.exps.indexOf(exp) < 0) state.exps.push(exp);
+          go('results');
+        } }, 'Find my skills'))
+    ];
+  }
+
+  function fit(t) { t.style.height = 'auto'; t.style.height = (t.scrollHeight + 4) + 'px'; }
+
+  function renderResults() {
+    var exp = state.cur, ids = rankedSkillIds(exp);
+    var shown = ids.slice(0, MAX_SHOWN), rest = ids.slice(MAX_SHOWN);
+    var tpAreas = [];
+
+    var styleSet = h('fieldset', null, h('legend', null, 'Choose how to shape your interview talking points'),
+      ['STAR', 'PPF'].map(function (v) {
+        var id = 'style-' + v;
+        var desc = v === 'STAR' ? 'A short story with four parts: the Situation, the Task you had, the Action you took, and the Result.' : 'Three parts: what you did in the Past, how you use the skill in the Present, and how you will use it in the Future job.';
+        return h('div', { class: 'opt' },
+          h('input', { type: 'radio', name: 'tpstyle', id: id, value: v, checked: state.style === v, 'aria-describedby': id + '-h', onchange: function () {
+            state.style = v;
+            tpAreas.forEach(function (o) { o.label.textContent = 'Interview talking point (' + styleName(v) + ')'; o.ta.value = exp.sk[o.sid].tp[v]; fit(o.ta); });
+          } }),
+          h('label', { for: id }, styleName(v), h('span', { class: 'hint', id: id + '-h' }, desc)));
+      }));
+
+    var cards = shown.map(function (sid) {
+      var s = skillById[sid], d = exp.sk[sid];
+      var hid = nid('skh');
+      var incId = nid('inc');
+      var bullets = d.bullets.map(function (b, i) {
+        var bid = nid('bul');
+        var ta = h('textarea', { id: bid, rows: '2' });
+        ta.value = b;
+        ta.addEventListener('input', function () { d.bullets[i] = ta.value; fit(ta); });
+        return [h('label', { class: 'field', for: bid }, 'Resume bullet starter ' + (i + 1) + ' (edit it so it is true for you)'), ta];
+      });
+      var tpId = nid('tp');
+      var tpLabel = h('label', { class: 'field', for: tpId }, 'Interview talking point (' + styleName(state.style) + ')');
+      var tpTa = h('textarea', { id: tpId, rows: '6' });
+      tpTa.value = d.tp[state.style];
+      tpTa.addEventListener('input', function () { d.tp[state.style] = tpTa.value; fit(tpTa); });
+      tpAreas.push({ sid: sid, ta: tpTa, label: tpLabel });
+      return h('section', { class: 'card', 'aria-labelledby': hid },
+        h('h3', { id: hid }, s.name, h('span', { class: 'badge' }, d.count === 1 ? 'From 1 thing you checked' : 'From ' + d.count + ' things you checked')),
+        h('p', null, s.why),
+        h('div', { class: 'opt' },
+          h('input', { type: 'checkbox', id: incId, checked: d.include, onchange: function (e) { d.include = e.target.checked; } }),
+          h('label', { for: incId }, 'Include this skill in my summary')),
+        bullets,
+        h('p', { class: 'verbs' }, h('strong', null, 'Other action verbs you could start with, if they are true: '), s.verbs.join(', ') + '.'),
+        tpLabel, tpTa);
+    });
+
+    var fitAll = function () { tpAreas.forEach(function (o) { fit(o.ta); }); };
+    setTimeout(fitAll, 0);
+
+    return [
+      stepHead(4, 'Your skills from “' + exp.name + '”'),
+      h('p', null, 'Based on what you checked, these skills fit. The words below are starters. Make them yours.'),
+      h('p', { class: 'truth' }, h('strong', null, 'Use only what is true. '), 'Fill in each [bracket] with your own details. Change any words that are not right. Delete anything you did not do.'),
+      styleSet,
+      cards,
+      rest.length ? h('p', { class: 'hint' }, 'More skills that also fit this experience: ' + rest.map(function (id) { return skillById[id].name; }).join(', ') + '.') : null,
+      h('div', { class: 'btns' },
+        h('button', { type: 'button', class: 'secondary', onclick: function () { go('tasks'); } }, 'Back to my checklist'),
+        state.exps.length < MAX_EXPS ? h('button', { type: 'button', class: 'secondary', onclick: function () { state.cur = newExp(); go('type'); } }, 'Add another experience') : null,
+        h('button', { type: 'button', class: 'primary', onclick: function () { go('summary'); } }, 'See my summary'))
+    ];
+  }
+
+  /* ---------- Summary, print, copy ---------- */
+  function includedList(exp) { return rankedSkillIds(exp).filter(function (id) { return exp.sk[id].include; }); }
+  function expTitle(exp) {
+    return exp.name + ' (' + typeById(exp.type).label + (exp.time ? ', ' + exp.time : '') + ')';
+  }
+  function glance() {
+    var seen = {}, order = [];
+    state.exps.forEach(function (e) {
+      includedList(e).forEach(function (id) { if (!seen[id]) { seen[id] = []; order.push(id); } seen[id].push(e.name); });
+    });
+    order.sort(function (a, b) { return skillById[a].order - skillById[b].order; });
+    return order.map(function (id) { return { name: skillById[id].name, from: seen[id] }; });
+  }
+  function allText() {
+    var out = [];
+    state.exps.forEach(function (e) { includedList(e).forEach(function (id) { out.push(e.sk[id].bullets.join('\n')); out.push(e.sk[id].tp[state.style]); }); });
+    return out.join('\n');
+  }
+  function blankCount() { return (allText().match(/\[[^\]]*\]/g) || []).length; }
+
+  function plainText() {
+    var L = ['MY SKILLS SUMMARY', 'Fresh Start Job Readiness Course', 'Use only what is true. Fill in every [bracket] with your own details.', ''];
+    L.push('SKILLS AT A GLANCE');
+    glance().forEach(function (g) { L.push('- ' + g.name + ' (from: ' + g.from.join(', ') + ')'); });
+    state.exps.forEach(function (e) {
+      var inc = includedList(e);
+      if (!inc.length) return;
+      L.push('', 'EXPERIENCE: ' + expTitle(e));
+      inc.forEach(function (id) {
+        L.push('', 'Skill: ' + skillById[id].name, 'Resume bullet starters:');
+        e.sk[id].bullets.forEach(function (b) { L.push('- ' + b.replace(/\n+/g, ' ')); });
+        L.push('Interview talking point (' + styleName(state.style) + '):', e.sk[id].tp[state.style]);
+      });
+    });
+    return L.join('\n');
+  }
+
+  function say(msg) { var s = document.getElementById('status'); if (s) s.textContent = msg; }
+
+  function copyResults(host) {
+    var txt = plainText();
+    function manual() {
+      host.textContent = '';
+      var id = nid('manual');
+      var ta = h('textarea', { id: id, readonly: true, rows: '10' });
+      ta.value = txt;
+      host.appendChild(h('label', { class: 'field', for: id }, 'Your browser would not copy for you. Select all of this text and copy it by hand (Ctrl+C or Cmd+C).'));
+      host.appendChild(ta);
+      host.hidden = false;
+      ta.focus(); ta.select();
+      say('Automatic copy did not work. The text is shown below so you can copy it by hand.');
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(function () { host.hidden = true; say('Copied. You can now paste your results into a document or an email to yourself.'); }, manual);
+    } else { manual(); }
+  }
+
+  function renderSummary() {
+    var g = glance(), blanks = blankCount();
+    var manual = h('div', { class: 'noprint', hidden: true });
+    var confirmBox = h('div', { class: 'confirm noprint', hidden: true, role: 'group', 'aria-labelledby': 'cf-h' },
+      h('p', { id: 'cf-h' }, 'Start over? This clears everything you typed. It cannot be undone.'),
+      h('div', { class: 'btns' },
+        h('button', { type: 'button', class: 'secondary', onclick: function () { confirmBox.hidden = true; startBtn.focus(); } }, 'No, keep my work'),
+        h('button', { type: 'button', class: 'primary', onclick: function () { resetState(); go('type'); } }, 'Yes, start over')));
+    var startBtn = h('button', { type: 'button', class: 'secondary', onclick: function () { confirmBox.hidden = false; confirmBox.querySelector('button').focus(); } }, 'Start over');
+
+    var body = [];
+    if (!g.length) {
+      body.push(h('p', null, 'No skills are selected for your summary. Go back and check at least one skill to include.'));
+    } else {
+      body.push(h('h3', null, 'Skills at a glance'));
+      body.push(h('ul', { class: 'plain' }, g.map(function (x) { return h('li', null, h('strong', null, x.name), ' (from: ' + x.from.join(', ') + ')'); })));
+      state.exps.forEach(function (e) {
+        var inc = includedList(e);
+        if (!inc.length) return;
+        body.push(h('section', { class: 'sumexp' },
+          h('h3', null, e.name),
+          h('p', null, typeById(e.type).label + (e.time ? ' • ' + e.time : '')),
+          inc.map(function (id) {
+            var d = e.sk[id];
+            return h('div', { class: 'sumskill' },
+              h('h4', null, skillById[id].name),
+              h('p', { class: 'label' }, 'Resume bullet starters'),
+              h('ul', { class: 'plain' }, d.bullets.map(function (b) { return h('li', null, b); })),
+              h('p', { class: 'label' }, 'Interview talking point: ' + styleName(state.style)),
+              h('p', { class: 'note' }, d.tp[state.style]));
+          })));
+      });
+    }
+
+    return [
+      h('p', { class: 'printhead' }, 'Fresh Start Job Readiness Course'),
+      h('div', { id: 'summary' },
+        h('h2', { tabindex: '-1', 'data-focus': '' }, 'My skills summary'),
+        h('p', { class: 'truth' }, h('strong', null, 'Use only what is true. '), 'Fill in every [bracket] with your own details before you use these words on a resume or in an interview.'),
+        blanks ? h('p', null, 'Blanks still to fill in: ' + blanks + '. You can finish them by hand after you print, or edit them before you copy.') : null,
+        body),
+      h('div', { class: 'noprint' },
+        h('div', { class: 'btns' },
+          h('button', { type: 'button', class: 'primary', onclick: function () { try { window.print(); } catch (e) { say('Printing did not start. Press Ctrl+P (Windows) or Cmd+P (Mac).'); } } }, 'Print my results'),
+          h('button', { type: 'button', class: 'secondary', onclick: function () { copyResults(manual); } }, 'Copy my results')),
+        h('p', { class: 'hint' }, 'You can also press Ctrl+P (Windows) or Cmd+P (Mac) to print. Nothing is saved, so print or copy before you close this page.'),
+        h('div', { id: 'status', role: 'status' }),
+        manual,
+        h('div', { class: 'btns' },
+          h('button', { type: 'button', class: 'secondary', onclick: function () { go('results'); } }, 'Back to my skills'),
+          state.exps.length < MAX_EXPS ? h('button', { type: 'button', class: 'secondary', onclick: function () { state.cur = newExp(); go('type'); } }, 'Add another experience') : null,
+          startBtn),
+        confirmBox)
+    ];
+  }
+
+  function render() {
+    app.textContent = '';
+    var parts = { type: renderType, details: renderDetails, tasks: renderTasks, results: renderResults, summary: renderSummary }[state.screen]();
+    add(app, parts);
+    app.querySelectorAll('textarea').forEach(function (t) { if (t.id && t.id.indexOf('bul') === 0 || t.id.indexOf('tp') === 0) fit(t); });
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
